@@ -84,8 +84,6 @@ void checkBox(int row , int col ,int size_r , int size_c , char boxArray[size_r]
                                 grid_history[noofmoves][3]=row+1;
                                 grid_history[noofmoves][4]=col;
                                 *check=*check+1;
-
-
                      }
                 }
             }
@@ -108,8 +106,6 @@ void checkBox(int row , int col ,int size_r , int size_c , char boxArray[size_r]
                                 grid_history[noofmoves][5]=row-1;
                                 grid_history[noofmoves][6]=col;
                                 *check=*check+1;
-
-
                     }
                 }
             }
@@ -455,7 +451,7 @@ void printBox(int size_r ,int size_c ,char boxArray[size_r][size_c],char movesPl
          default_color();
          printf("\t\t\t\tTime is --> %2d : %2d \n",minutes,seconds);
          printf("  Choose one of these\n");
-         printf("your guide through game\nEnter --> (1,1) to undo the previous move\nEnter --> (2,2) to redo the move\nEnter --> (3,3) to exit the game\nEnter --> (4,4) to exit and save the current game\n");
+         printf("your guide through game\nEnter --> (1,1) to undo the previous move\nEnter --> (2,2) to redo the move\nEnter --> (3,3) to exit the game\n");
          blue();
          printf("Enter The Row :");
          row=readInt()-1;  //Input Row
@@ -475,7 +471,7 @@ void printBox(int size_r ,int size_c ,char boxArray[size_r][size_c],char movesPl
          printf("\t\t\t\tTime is --> %2d : %2d \n",minutes,seconds);
          default_color();
          printf("  Choose one of these\n");
-         printf("your guide through game\nEnter --> (1,1) to undo the previous move\nEnter --> (2,2) to redo the move\nEnter --> (3,3) to exit the game\nEnter --> (4,4) to exit and save the current game\n");
+         printf("your guide through game\nEnter --> (1,1) to undo the previous move\nEnter --> (2,2) to redo the move\nEnter --> (3,3) to exit the game\n");
          red();
          printf("Enter The Row :");
          row=readInt()-1;  //Input Row
@@ -584,7 +580,8 @@ void printBox(int size_r ,int size_c ,char boxArray[size_r][size_c],char movesPl
 
           }else if((row==2)&&(col==2)){
                exit(0);
-          }else if((row==3)&&(col==3)){
+          } //next improvements to save the game and load it later
+                 /*else if((row==3)&&(col==3)){
             int saving_number;
             printf("Enter the file number that you want to save in {1 , 2 or 3} :");
             while(1){
@@ -633,7 +630,7 @@ void printBox(int size_r ,int size_c ,char boxArray[size_r][size_c],char movesPl
                     printf("Enter the file number that you want to save in {1 , 2 or 3} :");
               }
             }break ;
-             exit(0);
+             exit(0);*/
 
           }else if((row%2==0)&&(col%2!=0)){
              system("cls");
@@ -866,18 +863,6 @@ void input_main(int user_input){
              file_number = readInt();
              load_checker = 1 ;
              box(user_1 , user_2 , size_r , size_c , AI_v , file_number , load_checker , total_lines);
-
-    }else if(user_input == 4){
-         default_color();
-         char open[255];
-         FILE *file = fopen("Top10.txt","r");
-         int i ;
-         for(i = 0 ; i < 10 ; i ++){
-             fgets(open , 255 , file);
-             printf("%s" ,open);
-         }printf("\n");
-         system("pause");
-         fclose(file);
     }else if(user_input == 5){
          default_color();
          system("exit");
