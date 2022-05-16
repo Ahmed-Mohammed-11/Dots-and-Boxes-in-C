@@ -16,9 +16,7 @@ int main()
     yellow();
     printf("\t\t\t\t\t\t\t\t\t  1) 2 Players\n");
     printf("\t\t\t\t\t\t\t\t\t  2) You VS Computer\n");
-    printf("\t\t\t\t\t\t\t\t\t  3) Load a Game\n ");
-    printf("\t\t\t\t\t\t\t\t\t  4) List of Top 10 players\n");
-    printf("\t\t\t\t\t\t\t\t\t  5) Escape\n"
+    printf("\t\t\t\t\t\t\t\t\t  3) Escape\n"
            "\t\t\t\t\t\t\t  _____________________________________________________\n\n");
     int user_input ;
     blue();
